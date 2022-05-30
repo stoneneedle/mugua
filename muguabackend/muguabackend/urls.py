@@ -5,6 +5,7 @@ from apiserver import views
 
 router = routers.DefaultRouter()
 router.register(r'assignments', views.AssignmentView, 'assignment')
+router.register(r'discussions', views.DiscussionView, 'discussion')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

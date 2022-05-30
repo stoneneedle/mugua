@@ -10,3 +10,10 @@ class Assignment(models.Model):
 
     def __str__(self):
         return self.title
+
+class Discussion(models.Model):
+    title = models.CharField(max_length=120)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.title
