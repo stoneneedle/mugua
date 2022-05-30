@@ -10,6 +10,13 @@ import MenuItem from "@mui/material/MenuItem";
 // React Router
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
+// Routes
+import Home from "./routes/Home";
+import Discussions from "./routes/Dicussions";
+import Pages from "./routes/Pages";
+import Assignments from "./routes/Assignments";
+import Files from "./routes/Files";
+
 // CSS
 import "./index.css";
 
@@ -87,44 +94,4 @@ function MuguaMenu() {
 
 function MuguaTopbar() {
   return <>Test</>;
-}
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function Discussions() {
-  return (
-    <div>
-      <h2>Discussions</h2>
-    </div>
-  );
-}
-
-function Pages() {
-  return (
-    <div>
-      <h2>Pages</h2>
-    </div>
-  );
-}
-
-function Assignments() {
-  return (
-    <div>
-      <h2>Assignments</h2>
-    </div>
-  );
-}
-
-function Files() {
-  return (
-    <div>
-      <h2>Files</h2>
-    </div>
-  );
 }
