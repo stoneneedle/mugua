@@ -20,14 +20,14 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    fetch('http://localhost:8000/api/discussions/')
+    fetch('http://localhost:8000/api/discussions/', {
+      credentials: 'include'
+    })
       .then(function(resp) {
         return resp.json();
       })
       .then(function(data) {
-        if (data.data.length !== 0) {
-          console.log(data.data);
-        }
+        console.log(data);
       });
 
     this.state = {
