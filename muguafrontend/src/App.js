@@ -16,16 +16,38 @@ import MuguaMain from "./components/MuguaMain";
 // CSS
 import "./index.css";
 
-export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<MuguaMain />}>
-        <Route index element={<Home />} />
-        <Route path="discussions" element={<Discussions />} />
-        <Route path="pages" element={<Pages />} />
-        <Route path="assignments" element={<Assignments />} />
-        <Route path="files" element={<Files />} />
-      </Route>
-    </Routes>
-  );
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    fetch('http://localhost:8000/api/discussions/')
+      .then(function(resp) {
+        return resp.json();
+      })
+      .then(function(data) {
+        if (data.data.length !== 0) {
+          console.log(data.data);
+        }
+      });
+
+    this.state = {
+      testStr: 'test test test',
+      posts: [{id: 1, title: 'Test Post', message: 'Test msg.'}]
+    };
+  }
+
+  render() {
+    return (
+      <Routes>
+        <Route path="/" element={<MuguaMain />}>
+          <Route index element={<Home />} />
+          <Route path="discussions" element={<Discussions test={this.state.testStr} posts={this.state.posts} />} />
+          <Route path="pages" element={<Pages />} />
+          <Route path="assignments" element={<Assignments />} />
+          <Route path="files" element={<Files />} />
+        </Route>
+      </Routes>
+    );
+  }
+
 }
