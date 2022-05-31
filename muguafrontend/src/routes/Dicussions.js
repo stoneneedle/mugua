@@ -15,7 +15,6 @@ export default class Discussions extends React.Component {
       <div>
         <h2>Discussions</h2>
         <p>{postsStr}</p>
-        <p>Test111111</p>
       </div>
     );
   }
